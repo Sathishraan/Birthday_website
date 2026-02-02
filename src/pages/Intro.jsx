@@ -438,7 +438,7 @@ const Intro = () => {
                                         opacity: [0.7, 1, 0.7]
                                     }}
                                     transition={{ duration: 2, repeat: Infinity }}
-                                    className="absolute -bottom-20 left-1/2 -translate-x-1/2 whitespace-nowrap"
+                                    className="absolute -bottom-45 left-1/2 -translate-x-1/2 whitespace-nowrap"
                                 >
                                     <span className="text-pink-300/70 text-sm uppercase tracking-widest flex items-center gap-2">
                                         Click candle or use button 🌬️
@@ -451,7 +451,7 @@ const Intro = () => {
                                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(236, 72, 153, 0.6)" }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => setPhase('blown')}
-                                className="mt-28 px-8 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold shadow-lg flex items-center gap-2 group transition-all"
+                                className="mt-48 px-8 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold shadow-lg flex items-center gap-2 group transition-all"
                             >
                                 <Sparkles size={18} className="group-hover:rotate-12 transition-transform" />
                                 <span>Blow the Candle</span>
