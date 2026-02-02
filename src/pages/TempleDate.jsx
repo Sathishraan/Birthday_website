@@ -5,6 +5,7 @@ import { useRef, useEffect, memo } from 'react';
 import FloatingHearts from '../components/FloatingHearts';
 import WireLights from '../components/WireLights';
 import LazyImage from '../components/LazyImage';
+import { getMemoryUrl, getAudioUrl } from '../config/imageConfig';
 
 const images = [
     {
@@ -480,7 +481,7 @@ const ImageSection = memo(({ item, index, colors }) => {
             <motion.div style={{ scale, y: smoothY }} className="absolute inset-0 z-0">
                 <div className="absolute inset-0 w-full h-full">
                     <LazyImage
-                        src={`/memories/temple_date/${item.src}`}
+                        src={getMemoryUrl('temple_date', item.src)}
                         alt={item.caption}
                         className="w-full h-full object-cover object-center blur-2xl opacity-30"
                     />
@@ -526,7 +527,7 @@ const ImageSection = memo(({ item, index, colors }) => {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-amber-900/80 to-orange-900/80 p-3">
                     <div className="relative">
                         <LazyImage
-                            src={`/memories/temple_date/${item.src}`}
+                            src={getMemoryUrl('temple_date', item.src)}
                             alt={item.caption}
                             className="w-[280px] h-[400px] sm:w-[300px] sm:h-[450px] md:w-[320px] md:h-[480px] rounded-2xl"
                             style={{ objectFit: 'contain', backgroundColor: 'rgba(0,0,0,0.1)' }}
@@ -595,7 +596,7 @@ const TempleDate = () => {
     const audioRef = useRef(null);
 
     useEffect(() => {
-        audioRef.current = new Audio('/audio/marakkavillayae-masstamilanorg_nJP1z4h0.mp3');
+        audioRef.current = new Audio(getAudioUrl('marakkavillayae-masstamilanorg_nJP1z4h0.mp3'));
         audioRef.current.loop = true;
         audioRef.current.volume = 0.5;
         audioRef.current.play().catch(err => console.log("Audio play failed:", err));

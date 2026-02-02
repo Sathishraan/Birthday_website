@@ -5,6 +5,7 @@ import { useRef, useEffect, memo } from 'react';
 import FloatingHearts from '../components/FloatingHearts';
 import WireLights from '../components/WireLights';
 import LazyImage from '../components/LazyImage';
+import { getMemoryUrl, getAudioUrl } from '../config/imageConfig';
 
 const images = [
     {
@@ -79,7 +80,7 @@ const Beach = () => {
 
     useEffect(() => {
         // Initialize audio
-        audioRef.current = new Audio('/audio/nenjukkule-shakthisree-gopalan_7x9aNrcr.mp3');
+        audioRef.current = new Audio(getAudioUrl('nenjukkule-shakthisree-gopalan_7x9aNrcr.mp3'));
         audioRef.current.loop = true;
         audioRef.current.volume = 0.5;
 
@@ -254,7 +255,7 @@ const Beach = () => {
                             >
                                 <div className="absolute inset-0 overflow-hidden">
                                     <LazyImage
-                                        src={`/memories/beach/${item.src}`}
+                                        src={getMemoryUrl('beach', item.src)}
                                         alt={item.caption}
                                         className="w-full h-full object-cover blur-2xl opacity-30"
                                     />
@@ -313,7 +314,7 @@ const Beach = () => {
                                     {/* Landscape Image with Lazy Loader */}
                                     <div className="w-[320px] h-[240px] sm:w-[480px] sm:h-[320px] md:w-[560px] md:h-[360px]">
                                         <LazyImage
-                                            src={`/memories/beach/${item.src}`}
+                                            src={getMemoryUrl('beach', item.src)}
                                             alt={item.caption}
                                             className="w-full h-full object-contain rounded-2xl bg-black/20"
                                         />

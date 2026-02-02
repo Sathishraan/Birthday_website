@@ -5,6 +5,7 @@ import { useRef, useEffect, memo } from 'react';
 import FloatingHearts from '../components/FloatingHearts';
 import WireLights from '../components/WireLights';
 import LazyImage from '../components/LazyImage';
+import { getMemoryUrl } from '../config/imageConfig';
 
 const images = [
     {
@@ -327,7 +328,7 @@ const VC = () => {
                             >
                                 <div className="absolute inset-0 overflow-hidden">
                                     <LazyImage
-                                        src={`/memories/vc/${item.src}`}
+                                        src={getMemoryUrl('vc', item.src)}
                                         alt={item.caption}
                                         className="w-full h-full object-cover blur-2xl opacity-30"
                                     />
@@ -351,7 +352,7 @@ const VC = () => {
                                     {currentFrame.decorTop}
                                     <div className="w-[280px] h-[400px] sm:w-[320px] sm:h-[480px] md:w-[360px] md:h-[540px]">
                                         <LazyImage
-                                            src={`/memories/vc/${item.src}`}
+                                            src={getMemoryUrl('vc', item.src)}
                                             alt={item.caption}
                                             className={`w-full h-full object-cover ${currentFrame.imageClass}`}
                                         />

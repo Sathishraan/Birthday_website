@@ -5,6 +5,7 @@ import { useRef, useEffect, memo } from 'react';
 import FloatingHearts from '../components/FloatingHearts';
 import WireLights from '../components/WireLights';
 import LazyImage from '../components/LazyImage';
+import { getMemoryUrl, getAudioUrl } from '../config/imageConfig';
 
 const busStops = [
     {
@@ -99,7 +100,7 @@ const Chennai = () => {
 
     useEffect(() => {
         // Initialize audio
-        audioRef.current = new Audio('/audio/aagasa-veeran-santhosh-narayanan-pradeep-kumar_V67QLyU7.mp3');
+        audioRef.current = new Audio(getAudioUrl('aagasa-veeran-santhosh-narayanan-pradeep-kumar_V67QLyU7.mp3'));
         audioRef.current.loop = true;
         audioRef.current.volume = 0.5;
 
@@ -166,7 +167,7 @@ const Chennai = () => {
                         opacity: useTransform(smoothProgress, [0, 0.1], [1, 0])
                     }}
                 >
-                    <div className="absolute inset-0 bg-[url('/memories/chennai/IMG20250906192022.jpg')] bg-cover bg-center opacity-20 grayscale" />
+                    <div className="absolute inset-0 bg-cover bg-center opacity-20 grayscale" style={{ backgroundImage: `url(${getMemoryUrl('chennai', 'IMG20250906192022.jpg')})` }} />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#0f0a15]/90 via-[#1a0e24]/50 to-[#0f0a15]/90" />
                 </motion.div>
 
@@ -287,7 +288,7 @@ const Chennai = () => {
                                     {/* Image with Lazy Loader */}
                                     <div className="w-[280px] h-[400px] sm:w-[300px] sm:h-[450px] md:w-[320px] md:h-[480px]">
                                         <LazyImage
-                                            src={`/memories/chennai/${stop.src}`}
+                                            src={getMemoryUrl('chennai', stop.src)}
                                             alt={stop.caption}
                                             className="w-full h-full object-cover rounded-2xl"
                                         />

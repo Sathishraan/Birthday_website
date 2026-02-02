@@ -4,6 +4,7 @@ import { Heart, Calendar, Gift as GiftIcon, ArrowRight, Music, Cake, Stars } fro
 import { Link } from 'react-router-dom';
 import Confetti from 'react-confetti';
 import LazyImage from '../components/LazyImage';
+import { getAssetUrl } from '../config/imageConfig';
 
 const FloatingBalloon = React.memo(({ color, delay, left }) => {
     return (
@@ -105,7 +106,7 @@ const Home = () => {
 
                 <div className="relative h-64 sm:h-80 overflow-hidden">
                     <LazyImage
-                        src="/gift.png"
+                        src={getAssetUrl('gift.png')}
                         alt="Romantic Gift"
                         className="w-full h-full object-cover"
                     />
@@ -231,7 +232,7 @@ const Home = () => {
                             </motion.button>
                         </Link>
 
-                      
+
                     </div>
                 </div>
             </motion.div>

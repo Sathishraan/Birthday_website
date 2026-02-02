@@ -3,6 +3,7 @@ import { useEffect, useState, useMemo, useRef, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Heart, Sparkles, Star, Music, Volume2, VolumeX } from 'lucide-react';
 import Confetti from 'react-confetti';
+import { getAudioUrl } from '../config/imageConfig';
 
 // Enhanced star background with more stars and better animation
 const StarsBackground = memo(() => (
@@ -211,7 +212,7 @@ const Intro = () => {
         <div className="min-h-screen bg-black flex flex-col items-center justify-center p-6 sm:p-12 overflow-hidden relative">
             {/* Background Music */}
             <audio ref={audioRef} loop>
-                <source src="/audio/Happy-Birthday-Song-mp3.mp3" type="audio/mp3" />
+                <source src={getAudioUrl('Happy-Birthday-Song-mp3.mp3')} type="audio/mp3" />
                 Your browser does not support the audio element.
             </audio>
 

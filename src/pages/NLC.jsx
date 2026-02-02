@@ -5,6 +5,7 @@ import { useRef, useEffect, memo } from 'react';
 import FloatingHearts from '../components/FloatingHearts';
 import WireLights from '../components/WireLights';
 import LazyImage from '../components/LazyImage';
+import { getMemoryUrl, getAudioUrl } from '../config/imageConfig';
 
 const images = [
     {
@@ -55,7 +56,7 @@ const NLC = () => {
 
     useEffect(() => {
         // Initialize audio
-        audioRef.current = new Audio('/audio/poove-sempoove-male-ilaiyaraaja-k-j-yesudas_nftezGNe (1).mp3');
+        audioRef.current = new Audio(getAudioUrl('poove-sempoove-male-ilaiyaraaja-k-j-yesudas_nftezGNe (1).mp3'));
         audioRef.current.loop = true;
         audioRef.current.volume = 0.5;
 
@@ -233,7 +234,7 @@ const NLC = () => {
                             >
                                 <div className="absolute inset-0 overflow-hidden">
                                     <LazyImage
-                                        src={`/memories/nlc/${item.src}`}
+                                        src={getMemoryUrl('nlc', item.src)}
                                         alt={item.caption}
                                         className="w-full h-full object-cover blur-2xl opacity-30"
                                     />
@@ -295,7 +296,7 @@ const NLC = () => {
                                     {/* Image */}
                                     <div className="w-[280px] h-[400px] sm:w-[300px] sm:h-[450px] md:w-[320px] md:h-[480px]">
                                         <LazyImage
-                                            src={`/memories/nlc/${item.src}`}
+                                            src={getMemoryUrl('nlc', item.src)}
                                             alt={item.caption}
                                             className="w-full h-full object-cover rounded-2xl"
                                         />

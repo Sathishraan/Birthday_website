@@ -5,6 +5,7 @@ import { useRef, useEffect, memo } from 'react';
 import FloatingHearts from '../components/FloatingHearts';
 import WireLights from '../components/WireLights';
 import LazyImage from '../components/LazyImage';
+import { getMemoryUrl } from '../config/imageConfig';
 
 const images = [
     {
@@ -154,7 +155,7 @@ const ImageSection = memo(({ item, index, colors }) => {
             >
                 <div className="absolute inset-0 w-full h-full">
                     <LazyImage
-                        src={`/memories/fav/${item.src}`}
+                        src={getMemoryUrl('fav', item.src)}
                         alt={item.caption}
                         className="w-full h-full object-cover blur-2xl opacity-20"
                     />
@@ -204,7 +205,7 @@ const ImageSection = memo(({ item, index, colors }) => {
                         {/* Image */}
                         <div className="w-[280px] h-[380px] sm:w-[320px] sm:h-[420px] md:w-[350px] md:h-[480px]">
                             <LazyImage
-                                src={`/memories/fav/${item.src}`}
+                                src={getMemoryUrl('fav', item.src)}
                                 alt={item.caption}
                                 className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-102"
                             />

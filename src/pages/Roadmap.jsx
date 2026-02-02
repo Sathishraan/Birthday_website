@@ -3,6 +3,7 @@ import { MapPin, Heart, ArrowLeft, Camera, Sparkles, ArrowRight, Map, Compass, S
 import { Link } from 'react-router-dom';
 import { useState, useEffect, memo, useMemo } from 'react';
 import LazyImage from '../components/LazyImage';
+import { getRoadmapUrl } from '../config/imageConfig';
 
 const Roadmap = () => {
     // State for active memory (for animated navigation)
@@ -29,7 +30,7 @@ const Roadmap = () => {
             color: 'from-indigo-400 to-indigo-600',
             icon: '🎓',
             visualElements: ['books', 'diploma', 'campus', 'friends'],
-            aiImage: '/assets/roadmap/diplomo_ai.jpg',
+            aiImage: getRoadmapUrl('diplomo_ai.jpg'),
             sticker: 'Academic Journey'
         },
         {
@@ -41,7 +42,7 @@ const Roadmap = () => {
             color: 'from-orange-400 to-amber-600',
             icon: '🛕',
             visualElements: ['temple', 'incense', 'bells', 'prayers'],
-            aiImage: '/assets/roadmap/temple_ai.jpg',
+            aiImage: getRoadmapUrl('temple_ai.jpg'),
             sticker: 'Spiritual Connection'
         },
         {
@@ -53,7 +54,7 @@ const Roadmap = () => {
             color: 'from-emerald-400 to-green-600',
             icon: '🏭',
             visualElements: ['factory', 'machinery', 'engineering', 'industry'],
-            aiImage: '/assets/roadmap/nlc_ai.jpg',
+            aiImage: getRoadmapUrl('nlc_ai.jpg'),
             sticker: 'Industrial Romance'
         },
         {
@@ -65,7 +66,7 @@ const Roadmap = () => {
             color: 'from-teal-400 to-cyan-600',
             icon: '🌊',
             visualElements: ['waves', 'shore', 'sunset', 'ocean'],
-            aiImage: '/assets/roadmap/beach_ai.jpg',
+            aiImage: getRoadmapUrl('beach_ai.jpg'),
             sticker: 'Coastal Memories'
         },
         {
@@ -77,7 +78,7 @@ const Roadmap = () => {
             color: 'from-purple-400 to-violet-600',
             icon: '📱',
             visualElements: ['screen', 'device', 'video', 'messages'],
-            aiImage: '/assets/roadmap/vc_ai.jpg',
+            aiImage: getRoadmapUrl('vc_ai.jpg'),
             sticker: 'Digital Romance'
         },
         {
@@ -89,7 +90,7 @@ const Roadmap = () => {
             color: 'from-blue-400 to-blue-600',
             icon: '🏛️',
             visualElements: ['cityscape', 'buildings', 'streets', 'landmarks'],
-            aiImage: '/assets/roadmap/chennai_ai.jpg',
+            aiImage: getRoadmapUrl('chennai_ai.jpg'),
             sticker: 'Urban Adventures'
         },
         {
@@ -101,7 +102,7 @@ const Roadmap = () => {
             color: 'from-pink-400 to-rose-600',
             icon: '💖',
             visualElements: ['hearts', 'gifts', 'moments', 'treasures'],
-            aiImage: '/assets/roadmap/fav_ai.jpg',
+            aiImage: getRoadmapUrl('fav_ai.jpg'),
             sticker: 'Cherished Moments'
         }
     ], []);

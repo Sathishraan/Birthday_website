@@ -3,6 +3,7 @@ import { ArrowLeft, Heart, Sparkles, MapPin, Camera, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useRef, useEffect, memo } from 'react';
 import LazyImage from '../components/LazyImage';
+import { getMemoryUrl } from '../config/imageConfig';
 
 const images = [
     {
@@ -393,7 +394,7 @@ const InstagramFrame = memo(({ image, index }) => {
                 {/* Image with Lazy Loader */}
                 <div className="relative w-full aspect-[4/5] bg-black/5 flex items-center justify-center">
                     <LazyImage
-                        src={`/memories/diplomo/${image.src}`}
+                        src={getMemoryUrl('diplomo', image.src)}
                         alt={image.caption}
                         className="w-full h-full"
                         style={{ objectFit: 'contain' }} // Changed to contain to show full screenshots
