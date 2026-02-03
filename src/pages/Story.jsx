@@ -7,7 +7,7 @@ import WireLights from '../components/WireLights';
 
 const timelineEvents = [
     {
-        date: 'Sep 4, 2020',
+        date: 'Sep 7 2020',
         title: 'First Bike Ride Together',
         desc: 'The night that changed everything. Our first bike ride under the stars where our hearts connected. The moment I knew you, Srimathi, were something special.',
         icon: <Bike className="w-4 h-4 text-white" />,
